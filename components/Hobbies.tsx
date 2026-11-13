@@ -10,7 +10,7 @@ const icons = { palette: Palette, mic: Mic, book: BookOpen, sprout: Sprout, puzz
 export default function Hobbies() {
   return (
     <Section id="hobbies" emoji="🎈" title="My Hobbies & Passions" subtitle="What I do when the school bell rings.">
-      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid w-full gap-4 md:grid-cols-2 lg:grid-cols-3">
         {hobbies.map((h) => {
           const Icon = icons[h.icon];
           const t = toneStyles[h.tone];
@@ -19,7 +19,7 @@ export default function Hobbies() {
               key={h.title}
               whileHover={{ y: -6, rotate: -1 }}
               whileTap={{ scale: 0.97 }}
-              className={`group rounded-3xl border-2 p-6 ${t.soft} ${t.border}`}
+              className={`group flex w-full flex-col items-center rounded-3xl border-2 p-6 text-center md:items-start md:text-left ${t.soft} ${t.border}`}
             >
               <motion.span
                 whileHover={{ rotate: [0, -12, 12, 0] }}

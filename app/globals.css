@@ -49,6 +49,8 @@
 
 html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
 
+body, main { overflow-x: hidden; }
+
 body, body * {
   @apply transition-colors duration-300;
 }

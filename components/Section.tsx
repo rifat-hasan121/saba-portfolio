@@ -10,13 +10,13 @@ export default function Section({
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
-        className="mb-8 sm:mb-10"
+        className="mx-auto mb-8 text-center sm:mb-10 md:mx-0 md:text-left"
       >
         <h2 className="text-3xl font-semibold sm:text-4xl">
           {emoji && <span className="mr-2" aria-hidden>{emoji}</span>}
           {title}
         </h2>
-        {subtitle && <p className="mt-2 max-w-xl text-muted">{subtitle}</p>}
+        {subtitle && <p className="mx-auto mt-2 max-w-xl text-muted md:mx-0">{subtitle}</p>}
       </motion.div>
       {children}
     </section>

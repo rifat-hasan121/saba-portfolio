@@ -6,11 +6,11 @@ import { toneStyles } from "@/data/tones";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative mx-auto grid min-h-[100svh] max-w-6xl items-center gap-10 px-4 pb-12 pt-28 sm:px-6 md:grid-cols-2">
+    <section id="top" className="relative mx-auto grid min-h-[100svh] w-full max-w-6xl items-center gap-10 px-4 pb-12 pt-28 sm:px-6 md:grid-cols-2">
       <div className="pointer-events-none absolute -left-20 top-20 h-64 w-64 rounded-full bg-sun/30 blur-3xl" aria-hidden />
       <div className="pointer-events-none absolute -right-16 bottom-10 h-72 w-72 rounded-full bg-mint/25 blur-3xl" aria-hidden />
 
-      <div className="relative order-2 md:order-1">
+      <div className="relative order-2 flex flex-col items-center text-center md:order-1 md:items-start md:text-left">
         <span className="inline-flex items-center gap-2 rounded-full border-2 border-sun bg-sun/30 px-4 py-1.5 text-sm font-extrabold">
           <Sparkles size={16} className="text-coral" /> {student.grade}
         </span>
@@ -28,9 +28,9 @@ export default function Hero() {
           </motion.span>
         </h1>
 
-        <p className="mt-5 max-w-lg text-lg text-muted">{student.bio}</p>
+        <p className="mx-auto mt-5 max-w-lg text-lg text-muted md:mx-0">{student.bio}</p>
 
-        <div className="mt-8 flex flex-wrap gap-3">
+        <div className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
           <a href="#gallery" className="rounded-full bg-coral px-6 py-3 font-extrabold text-white shadow-pop transition active:translate-y-1 active:shadow-none">
             Explore My Work
           </a>

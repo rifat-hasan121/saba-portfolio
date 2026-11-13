@@ -11,15 +11,15 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="mx-auto max-w-6xl px-4 pb-8 pt-12">
+    <footer className="mx-auto w-full max-w-6xl px-4 pb-8 pt-12 sm:px-6">
       <div className="rounded-3xl border border-subtle bg-card p-6 shadow-sm sm:p-8 md:p-10">
         <div className="grid gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-[1.2fr_1fr_0.8fr]">
-          <section aria-label="Student information">
+          <section className="flex flex-col items-center text-center md:items-start md:text-left" aria-label="Student information">
             <p className="font-display text-2xl font-semibold text-primary">{student.name} 🌟</p>
             <span className="mt-2 inline-flex rounded-full bg-coral/10 px-3 py-1 text-xs font-extrabold text-coral">
               Grade 6 Explorer
             </span>
-            <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted">
+            <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-muted md:mx-0">
               Dreaming big, painting stories, and learning something new every day!
             </p>
             <a
@@ -30,9 +30,9 @@ export default function Footer() {
             </a>
           </section>
 
-          <nav aria-label="Footer navigation">
+          <nav className="text-center md:text-left" aria-label="Footer navigation">
             <h2 className="font-display text-lg font-semibold text-primary">Explore my corner</h2>
-            <ul className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2">
+            <ul className="mt-3 grid grid-cols-2 justify-items-center gap-x-4 gap-y-2 md:justify-items-start">
               {footerLinks.map((link) => (
                 <li key={link.href}>
                   <a
@@ -46,7 +46,7 @@ export default function Footer() {
             </ul>
           </nav>
 
-          <section className="md:col-span-2 lg:col-span-1">
+          <section className="flex flex-col items-center text-center md:col-span-2 md:items-start md:text-left lg:col-span-1">
             <h2 className="font-display text-lg font-semibold text-primary">A little note</h2>
             <a
               href="#top"

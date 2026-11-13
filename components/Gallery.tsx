@@ -14,7 +14,7 @@ export default function Gallery() {
 
   return (
     <Section id="gallery" emoji="🖼️" title="My Creative Gallery" subtitle="Tap any piece to look closer or read it.">
-      <div role="tablist" aria-label="Gallery filter" className="mb-8 flex flex-wrap gap-2">
+      <div role="tablist" aria-label="Gallery filter" className="mb-8 flex flex-wrap justify-center gap-2">
         {galleryTabs.map((t) => (
           <button
             key={t} role="tab" aria-selected={tab === t} onClick={() => setTab(t)}
@@ -27,16 +27,17 @@ export default function Gallery() {
         ))}
       </div>
 
-      <motion.ul layout className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <motion.ul layout className="grid w-full gap-5 md:grid-cols-2 lg:grid-cols-3">
         <AnimatePresence mode="popLayout">
           {items.map((item) => (
             <motion.li
               key={item.id} layout
               initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }}
+              className="w-full"
             >
               <button
                 onClick={() => setActive(item)}
-                className={`group block w-full overflow-hidden rounded-3xl border-2 bg-white text-left transition hover:-translate-y-1.5 hover:shadow-soft ${toneStyles[item.tone].border}`}
+                className={`group block w-full overflow-hidden rounded-3xl border-2 bg-white text-center transition hover:-translate-y-1.5 hover:shadow-soft md:text-left ${toneStyles[item.tone].border}`}
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <Placeholder emoji={item.emoji} tone={item.tone} image={item.image} alt={item.title} className="transition-transform duration-500 group-hover:scale-110" />

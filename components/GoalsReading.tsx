@@ -13,14 +13,14 @@ export default function GoalsReading() {
 
   return (
     <Section id="goals" emoji="🎯" title="My Goals & Reading Corner">
-      <div className="grid gap-6 md:grid-cols-2">
-        <div className="rounded-3xl border-2 border-mint/40 bg-mint/10 p-6">
+      <div className="grid w-full gap-6 md:grid-cols-2">
+        <div className="flex w-full flex-col items-center rounded-3xl border-2 border-mint/40 bg-mint/10 p-6 text-center md:items-start md:text-left">
           <h3 className="text-xl font-semibold">Currently Reading</h3>
-          <div className="mt-4 flex gap-4">
+          <div className="mt-4 flex flex-col items-center gap-4 md:flex-row md:items-start">
             <div className="h-40 w-28 shrink-0 overflow-hidden rounded-2xl border-4 border-white shadow-soft">
               <Placeholder emoji={book.emoji} tone={book.tone} image={book.image} alt={`Cover of ${book.title}`} emojiSize="text-5xl" />
             </div>
-            <div>
+            <div className="text-center md:text-left">
               <p className="font-display text-lg font-semibold">{book.title}</p>
               <p className="text-sm text-muted">by {book.author}</p>
               <p className="mt-3">{book.review}</p>
@@ -34,12 +34,12 @@ export default function GoalsReading() {
           </div>
         </div>
 
-        <div className="rounded-3xl border-2 border-sun/60 bg-sun/20 p-6">
-          <div className="flex items-baseline justify-between">
+        <div className="flex w-full flex-col items-center rounded-3xl border-2 border-sun/60 bg-sun/20 p-6 text-center sm:items-stretch sm:text-left">
+          <div className="flex flex-col items-center gap-1 md:flex-row md:items-baseline md:justify-between">
             <h3 className="text-xl font-semibold">My {student.year} Bucket List</h3>
             <span className="text-sm font-extrabold">{doneCount}/{goals.length} done</span>
           </div>
-          <ul className="mt-4 space-y-2">
+          <ul className="mt-4 w-full space-y-2">
             {goals.map((g) => (
               <li key={g.id}>
                 <button

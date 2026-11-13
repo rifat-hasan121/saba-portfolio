@@ -21,8 +21,8 @@ export default function Contact() {
 
   return (
     <Section id="contact" emoji="💌" title="Say Hello!" subtitle={`Leave ${student.firstName} a kind note or a compliment.`}>
-      <div className="grid gap-6 md:grid-cols-5">
-        <div className="rounded-3xl border-2 border-mint/40 bg-mint/10 p-6 md:col-span-2">
+      <div className="grid w-full gap-6 md:grid-cols-5">
+        <div className="flex w-full flex-col items-center rounded-3xl border-2 border-mint/40 bg-mint/10 p-6 text-center md:col-span-2 md:items-start md:text-left">
           <ShieldCheck className="text-mint" size={30} />
           <h3 className="mt-3 text-xl font-semibold">A note for parents & guardians</h3>
           <p className="mt-2 text-muted">
@@ -33,7 +33,7 @@ export default function Contact() {
           </a>
         </div>
 
-        <form onSubmit={onSubmit} className="space-y-4 rounded-3xl border-2 border-coral/30 bg-white p-6 md:col-span-3">
+        <form onSubmit={onSubmit} className="w-full space-y-4 rounded-3xl border-2 border-coral/30 bg-white p-6 text-center md:col-span-3 md:text-left">
           <label className="block">
             <span className="mb-1 block font-bold">Your first name</span>
             <input name="name" required maxLength={40} autoComplete="given-name" className={field} placeholder="e.g. Ayesha" />
@@ -42,7 +42,7 @@ export default function Contact() {
             <span className="mb-1 block font-bold">Your message</span>
             <textarea name="message" required maxLength={500} rows={4} className={field} placeholder={`I loved your poem, ${student.firstName}!`} />
           </label>
-          <button type="submit" className="inline-flex items-center gap-2 rounded-full bg-coral px-6 py-3 font-extrabold text-white shadow-pop transition active:translate-y-1 active:shadow-none">
+          <button type="submit" className="mx-auto inline-flex items-center gap-2 rounded-full bg-coral px-6 py-3 font-extrabold text-white shadow-pop transition active:translate-y-1 active:shadow-none md:mx-0">
             <Send size={18} /> Send message
           </button>
           {sent && <p role="status" className="font-bold text-mint">Thank you! Your email app should open so you can send it. 💛</p>}
