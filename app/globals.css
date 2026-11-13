@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+:root[data-theme="candy-pop"] {
+  --bg-primary: 255 253 249;
+  --bg-card: 255 255 255;
+  --text-primary: 30 41 59;
+  --text-muted: 100 116 139;
+  --accent-primary: 255 107 139;
+  --accent-secondary: 78 205 196;
+  --text-on-secondary: 30 41 59;
+  --border-subtle: 255 107 139;
+}
+
+:root[data-theme="lavender-dream"] {
+  --bg-primary: 250 247 255;
+  --bg-card: 255 255 255;
+  --text-primary: 30 27 75;
+  --text-muted: 100 91 130;
+  --accent-primary: 139 92 246;
+  --accent-secondary: 244 114 182;
+  --text-on-secondary: 30 27 75;
+  --border-subtle: 139 92 246;
+}
+
+:root[data-theme="mint-meadow"] {
+  --bg-primary: 244 251 248;
+  --bg-card: 255 255 255;
+  --text-primary: 6 78 59;
+  --text-muted: 75 110 98;
+  --accent-primary: 16 185 129;
+  --accent-secondary: 245 158 11;
+  --text-on-secondary: 6 78 59;
+  --border-subtle: 16 185 129;
+}
+
+:root[data-theme="midnight-galaxy"] {
+  --bg-primary: 15 23 42;
+  --bg-card: 30 41 59;
+  --text-primary: 248 250 252;
+  --text-muted: 186 199 219;
+  --accent-primary: 244 114 182;
+  --accent-secondary: 56 189 248;
+  --text-on-secondary: 15 23 42;
+  --border-subtle: 148 163 184;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+
+body, body * {
+  @apply transition-colors duration-300;
+}
+
+body {
+  @apply bg-cream font-body text-ink antialiased;
+  background-image: radial-gradient(rgb(var(--accent-primary) / 0.14) 1.5px, transparent 1.5px);
+  background-size: 26px 26px;
+}
+
+h1, h2, h3, h4 { @apply font-display; }
+
+:focus-visible { outline: 3px solid rgb(var(--accent-secondary)); outline-offset: 3px; border-radius: 12px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-float { animation: none; }
+}
